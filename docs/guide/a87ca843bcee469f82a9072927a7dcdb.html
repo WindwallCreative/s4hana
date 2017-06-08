@@ -1,0 +1,245 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="abstract" content="As OpenUI5 evolves over time, some of the UI controls are replaced by others, or their concepts abandoned entirely. This chapter gives an overview on theme and library level of the most important deprecations. Individual control deprecations and more information about the controls replacing them can be found in the API reference within the Demo Kit."/>
+<meta name="description" content="As OpenUI5 evolves over time, some of the UI controls are replaced by others, or their concepts abandoned entirely. This chapter gives an overview on theme and library level of the most important deprecations. Individual control deprecations and more information about the controls replacing them can be found in the API reference within the Demo Kit."/>
+
+<link rel="stylesheet" type="text/css" href="css/documentation.css?x=23564923504341428"/>
+<title>Deprecated Themes and Libraries</title>
+  <link rel="stylesheet" type="text/css" href="../../resources/sap/ui/demokit/themes/base/highlight-query-terms.css" />
+    <link rel="stylesheet" type="text/css" href="../../resources/sap/ui/demokit/js/google-code-prettify/prettify.css" />
+    <script src="../../resources/sap/ui/demokit/js/sdk-pagehelper.js"></script>
+  </head>
+<body class="" id="loioa87ca843bcee469f82a9072927a7dcdb">
+<div id="wrapper"><div id="container">
+
+	<h1 class="title topictitle1">Deprecated Themes and Libraries</h1>
+
+	
+	<div class="body conbody"><p class="shortdesc">As <span class="ph"><span class="ph pname">OpenUI5</span></span> evolves over time, some of the UI controls are replaced by others, or
+		their concepts abandoned entirely. This chapter gives an overview on theme and library level of the most important deprecations. Individual control
+		deprecations and more information about the controls replacing them can be found in the API reference within the Demo Kit.</p>
+
+		<div class="section"><div class="section_title">Themes that are no longer supported</div><div type="Themes that are no longer supported"><div class="sectiondiv subsection">
+				<p class="p subsectiontitle">sap_bluecrystal</p>
+
+				<p class="p">The <span class="keyword apiname">sap_bluecrystal</span> theme is only supported until version 1.38. It is replaced by <span class="keyword apiname">sap_belize</span> as the
+					default theme for <span class="ph"><span class="ph pname">OpenUI5</span></span> applications.</p>
+
+				<p class="p">Custom themes based on <samp class="ph codeph">sap_bluecrystal</samp> are no longer supported with 1.40 or higher.</p>
+
+			</div><div class="sectiondiv subsection">
+				<p class="p subsectiontitle">sap_ux</p>
+
+				<p class="p">The <span class="keyword apiname">sap_ux</span> theme is only supported until version 1.38. This was one of the very first <span class="ph"><span class="ph pname">OpenUI5</span></span> themes and is only implemented by a small subset of the
+						<span class="keyword apiname">sap.ui.commons</span> and <span class="keyword apiname">sap.ui.ux3</span> controls, which are also deprecated. </p>
+
+			</div><div class="sectiondiv subsection">
+				<p class="p subsectiontitle">sap_platinum</p>
+
+				<p class="p">The <span class="keyword apiname">sap_platinum</span> theme is only supported until version 1.38. This was one of the very first <span class="ph"><span class="ph pname">OpenUI5</span></span> themes and is only implemented by a small subset of the
+						<span class="keyword apiname">sap.ui.commons</span> and <span class="keyword apiname">sap.ui.ux3</span> controls, which are also deprecated. </p>
+
+			</div><div class="sectiondiv subsection">
+				<p class="p subsectiontitle">sap_goldreflection</p>
+
+				<p class="p">The <span class="keyword apiname">sap_goldreflection</span> theme is only supported until version 1.38. This was one of the first <span class="ph"><span class="ph pname">OpenUI5</span></span> themes and is only implemented by the <span class="keyword apiname">sap.ui.commons</span>
+					and <span class="keyword apiname">sap.ui.ux3</span> controls, which are also deprecated. </p>
+
+			</div></div></div>
+
+		<div class="section"><div class="section_title">Deprecated Libraries</div><div type="Deprecated Libraries"><div class="sectiondiv subsection">
+				<p class="p subsectiontitle">sap.ui.commons</p>
+
+				<p class="p">The <span class="keyword apiname">sap.ui.commons</span> library is deprecated as of version 1.38.</p>
+
+				<p class="p"><span class="keyword apiname">sap.ui.commons</span> was available from the very beginning of <span class="ph"><span class="ph pname">OpenUI5</span></span>. It contains a large number of basic UI controls like buttons, input fields and dropdowns. With version 1.16, the
+						<span class="keyword apiname">sap.m</span> library was introduced. It contains semantically identical controls (button, input and select) that, at that
+					time, were only supported on mobile platforms. In later versions, <span class="keyword apiname">sap.m</span> was extended to support desktop platforms as
+					well. For more information about this, see <a class="xref" href="91f079dc6f4d1014b6dd926db0e91070.html" title="Collection of exceptions from the OpenUI5 browser and platform support matrix, for the sap.m library.">sap.m</a>. The <span class="keyword apiname">sap.m</span> controls were
+					bigger in size to support mobile displays that require a larger touch area. The “Compact Content Density” feature explained under <a class="xref" href="e54f729da8e3405fae5e4fe8ae7784c1.html" title="The devices used to run apps that are developed with OpenUI5 run on various different operating systems and have very different screen sizes. OpenUI5 contains different content densities for certain controls that allow your app to adapt to the device in question, allowing you to display larger controls for touch-enabled devices and a smaller, more compact design for devices that are operated by mouse.">Content Densities</a> was then added to <span class="ph"><span class="ph pname">OpenUI5</span></span>,
+					allowing you to display a control in a more compact screen size. Today, applications should be built one single time using
+						<span class="keyword apiname">sap.m</span> (and other libraries) and their content density switched at runtime depending on the environment. As such, the
+					redundant library <span class="keyword apiname">sap.ui.commons</span> should no longer be used.</p>
+
+				<p class="p">Some of the controls in <span class="keyword apiname">sap.ui.commons.layout</span> have been replaced by the new dedicated layout library called
+						<span class="keyword apiname">sap.ui.layout</span>, which runs on the same platforms as <span class="keyword apiname">sap.m</span>.</p>
+
+				<p class="p">Some of the old controls have been made available again through the non-deprecated <span class="keyword apiname">sap.ui.unified</span> library (e.g.
+					FileUploader, Menu), which runs on the same platforms as <span class="keyword apiname">sap.m</span>.</p>
+
+				<p class="p">Some concepts such as Tree, Accordion and Row Repeater have been abandoned completely.</p>
+
+				<div class="note note"><span class="notetitle">Note</span> 
+					<p class="p">Should you decide to ignore the deprecation and continue using <span class="keyword apiname">sap.ui.commons</span>, we recommend you use the
+							<span class="keyword apiname">sap_bluecrystal</span> or <span class="keyword apiname">sap_belize</span> theme and not the deprecated <span class="keyword apiname">sap_ux</span>,
+							<span class="keyword apiname">sap_platinum</span> and <span class="keyword apiname">sap_goldreflection</span> themes, which will be removed in one of the next releases.
+						The <span class="keyword apiname">sap_bluecrystal</span> theme is also no longer supported, but offers full coverage of the
+							<span class="keyword apiname">sap.ui.commons</span> library and will be maintained for some time, though not actively developed. The
+							<span class="keyword apiname">sap_belize</span> theme offers an initial implementation for the <span class="keyword apiname">sap.ui.commons</span> library to allow for
+						a smoother transition, but it is not supported for this library and will not be maintained. We recommend that you consider migrating
+						your existing apps to actively developed libraries, such as <span class="keyword apiname">sap.m</span>, and use <span class="keyword apiname">sap_belize</span> as the
+						default theme going forward.</p>
+
+				</div>
+
+			</div><div class="sectiondiv subsection">
+				<p class="p subsectiontitle">sap.ui.ux3</p>
+
+				<p class="p">The <span class="keyword apiname">sap.ui.ux3</span> library is deprecated as of version 1.38.</p>
+
+				<div class="p">This library contains more complex UI controls that were based on <span class="keyword apiname">sap.ui.commons</span> along the UX3 design approach. The
+						<span class="keyword apiname">sap.m</span> library - successor to <span class="keyword apiname">sap.ui.commons</span> - implements SAP’s new SAP Fiori design
+					[http://experience.sap.com/fiori-design/], which supersedes UX3. As such, the <span class="keyword apiname">sap.ui.ux3</span> library is also deprecated. Some
+					of the UX3 concepts are reflected in SAP Fiori, some are abandoned, as outlined in the following table:
+<div class="table-wrapper tablenoborder"><table summary="" id="loioa87ca843bcee469f82a9072927a7dcdb__table_xkc_rdk_gv" class="table" frame="border" border="1" rules="all">
+<colgroup><col width="50%"/><col width="50%"/></colgroup>
+
+							
+							
+							<thead class="thead" align="left">
+								<tr class="row">
+									<th class="entry" valign="top" width="50%" id="d7563150e289">
+										<p class="p">Concept</p>
+
+									</th>
+
+									<th class="entry" valign="top" width="50%" id="d7563150e295">
+										<p class="p">What's Happened?</p>
+
+									</th>
+
+								</tr>
+
+							</thead>
+
+							<tbody class="tbody">
+								<tr class="row">
+									<td class="entry" valign="top" width="50%" headers="d7563150e289 ">
+										<p class="p">Feeds</p>
+
+									</td>
+
+									<td class="entry" valign="top" width="50%" headers="d7563150e295 ">
+										<p class="p">Replaced by sap.m (<samp class="ph codeph">sap.m.Feed</samp>*).</p>
+
+									</td>
+
+								</tr>
+
+								<tr class="row">
+									<td class="entry" valign="top" width="50%" headers="d7563150e289 ">
+										<p class="p">Notification Bar</p>
+
+									</td>
+
+									<td class="entry" valign="top" width="50%" headers="d7563150e295 ">
+										<p class="p">Replaced by sap.m (<samp class="ph codeph">sap.m.MessagePopover</samp> and <samp class="ph codeph">sap.m.semantic</samp>*).</p>
+
+									</td>
+
+								</tr>
+
+								<tr class="row">
+									<td class="entry" valign="top" width="50%" headers="d7563150e289 ">
+										<p class="p">Thing Inspector</p>
+
+									</td>
+
+									<td class="entry" valign="top" width="50%" headers="d7563150e295 ">
+										<p class="p">Indirectly replaced by a different design for displaying object data.</p>
+
+									</td>
+
+								</tr>
+
+								<tr class="row">
+									<td class="entry" valign="top" width="50%" headers="d7563150e289 ">
+										<p class="p">Shell</p>
+
+									</td>
+
+									<td class="entry" valign="top" width="50%" headers="d7563150e295 ">
+										<p class="p">Partially replaced by <samp class="ph codeph">sap.ui.unified.Shell</samp>.</p>
+
+									</td>
+
+								</tr>
+
+								<tr class="row">
+									<td class="entry" valign="top" width="50%" headers="d7563150e289 ">
+										<p class="p">Data Set</p>
+
+									</td>
+
+									<td class="entry" valign="top" width="50%" headers="d7563150e295 ">
+										<p class="p">Not part of SAP Fiori.</p>
+
+									</td>
+
+								</tr>
+
+								<tr class="row">
+									<td class="entry" valign="top" width="50%" headers="d7563150e289 ">
+										<p class="p">Exact</p>
+
+									</td>
+
+									<td class="entry" valign="top" width="50%" headers="d7563150e295 ">
+										<p class="p">Not directly part of SAP Fiori. Use <samp class="ph codeph">sap.ui.comp.FilterBar</samp> or <samp class="ph codeph">sap.m.IconTabBar</samp> for
+											filtering.</p>
+
+									</td>
+
+								</tr>
+
+								<tr class="row">
+									<td class="entry" valign="top" width="50%" headers="d7563150e289 ">
+										<p class="p">Quick Views</p>
+
+									</td>
+
+									<td class="entry" valign="top" width="50%" headers="d7563150e295 ">
+										<p class="p">Concept abandoned as the concept of “hovering with the mouse pointer over a control” does not exist on mobile
+											devices.</p>
+
+									</td>
+
+								</tr>
+
+							</tbody>
+
+						</table>
+</div>
+</div>
+
+				<p class="p">For more information about the SAP Fiori design, see the <a class="xref" href="http://experience.sap.com/fiori-design/" alt="http://experience.sap.com/fiori-design/" title="http://experience.sap.com/fiori-design/">SAP Fiori Design Guidelines</a>.</p>
+
+				<div class="note note"><span class="notetitle">Note</span> 
+					<p class="p">Should you decide to ignore the deprecation and continue using <span class="keyword apiname">sap.ui.ux3</span>, we recommend you use the
+							<span class="keyword apiname">sap_bluecrystal</span> or <span class="keyword apiname">sap_belize</span> theme and not the deprecated <span class="keyword apiname">sap_ux</span>,
+							<span class="keyword apiname">sap_platinum</span> and <span class="keyword apiname">sap_goldreflection</span> themes, which will be removed in one of the next releases.
+						The <span class="keyword apiname">sap_bluecrystal</span> theme is also no longer supported, but offers full coverage of the <span class="keyword apiname">sap.ui.ux3</span>
+						library and will be maintained for some time, though not actively developed. The <span class="keyword apiname">sap_belize</span> theme offers an initial
+						implementation for the <span class="keyword apiname">sap.ui.ux3</span> library to allow for a smoother transition, but it is not supported for this
+						library and will not be maintained. We recommend that you consider migrating your existing apps to actively developed libraries, such as
+							<span class="keyword apiname">sap.m</span>, and use <span class="keyword apiname">sap_belize</span> as the default theme going forward.</p>
+
+				</div>
+
+			</div></div></div>
+
+	</div>
+
+	<div class="related-links"> 
+<div class="relinfo"><div class="relinfotitle ">Related Information</div>
+<div><a class="link" href="../../docs/api/deprecation.html" alt="../../docs/api/deprecation.html" title="../../docs/api/deprecation.html">Index of Deprecated APIs</a></div>
+<div><a class="link" href="363cd16eba1f45babe3f661f321a7820.html" title="OpenUI5 provides a set of JavaScript and CSS libraries, which can be combined in an application using the combinations that are supported.">Supported Library Combinations</a></div>
+</div>
+</div>
+</div></div>
+
+</body>
+</html>

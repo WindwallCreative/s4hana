@@ -1,0 +1,138 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="abstract" content="This guide outlines the most important points when creating blocks for the sap.uxap.Object.Page.Layout"/>
+<meta name="description" content="This guide outlines the most important points when creating blocks for the sap.uxap.Object.Page.Layout"/>
+
+<link rel="stylesheet" type="text/css" href="css/documentation.css?x=7081149081422787"/>
+<title>Creating Blocks</title>
+  <link rel="stylesheet" type="text/css" href="../../resources/sap/ui/demokit/themes/base/highlight-query-terms.css" />
+    <link rel="stylesheet" type="text/css" href="../../resources/sap/ui/demokit/js/google-code-prettify/prettify.css" />
+    <script src="../../resources/sap/ui/demokit/js/sdk-pagehelper.js"></script>
+  </head>
+<body class="" id="loio2978f6064742456ebed31c5ccf4d051d">
+<div id="wrapper"><div id="container">
+
+	<h1 class="title topictitle1">Creating Blocks</h1>
+
+	
+	<div class="body conbody"><p class="shortdesc">This guide outlines the most important points when creating blocks for the
+			<samp class="ph codeph">sap.uxap.Object.Page.Layout</samp></p>
+
+		<p class="p"><span class="ph emphasis emphasis">Decide which kind of block to use:</span></p>
+
+		<ul class="ul" id="loio2978f6064742456ebed31c5ccf4d051d__ul_uxq_zrj_ls">
+			<li class="li">
+				<p class="p">Single view block if <samp class="ph codeph">Collapsed</samp>, <samp class="ph codeph">Expanded</samp> and
+						<samp class="ph codeph">Compact</samp> modes are similar and easy to develop with a single
+					view.</p>
+
+			</li>
+
+			<li class="li">
+				<p class="p">Multiple view blocks if it’s easier to provide different views for the different
+					modes.</p>
+
+			</li>
+
+			<li class="li">
+				<p class="p">Free form if none of these suit your needs.</p>
+
+			</li>
+
+		</ul>
+
+		<p class="p"><span class="ph emphasis emphasis">Single View Block Creation</span></p>
+
+		<ul class="ul" id="loio2978f6064742456ebed31c5ccf4d051d__ul_h1x_gsj_ls">
+			<li class="li">
+				<p class="p">Create the block folder in the source control of the app.</p>
+
+			</li>
+
+			<li class="li">
+				<div class="p">Add a <samp class="ph codeph">BlockName.js</samp> file which extends
+						<samp class="ph codeph">sap.uxap.BlockBase</samp>.<div class="note note"><span class="notetitle">Note</span> Naming guideline: The block name
+						should end with the word <span class="ph emphasis emphasis">Block</span>.</div>
+</div>
+
+			</li>
+
+			<li class="li">
+				<p class="p">Add a <samp class="ph codeph">BlockName.view.xml</samp> XML view.</p>
+
+			</li>
+
+			<li class="li">
+				<p class="p">If needed, add the associated controller:
+					<samp class="ph codeph">BlockNameController.controller.js</samp>.</p>
+
+			</li>
+
+		</ul>
+
+		<p class="p"><span class="ph emphasis emphasis">Multiple View Block Creation</span></p>
+
+		<ul class="ul" id="loio2978f6064742456ebed31c5ccf4d051d__ul_bbz_gsj_ls">
+			<li class="li">
+				<p class="p">Create the block folder in the source control of the app.</p>
+
+			</li>
+
+			<li class="li">
+				<p class="p">Add a <samp class="ph codeph">BlockName.js</samp> file which extends
+					<samp class="ph codeph">sap.uxap.BlockBase</samp>.</p>
+
+			</li>
+
+			<li class="li">
+				<p class="p">Declare the views to be used for the different modes in the <samp class="ph codeph">views</samp> section of
+					the metadata.</p>
+
+			</li>
+
+			<li class="li">
+				<div class="p">Add the <samp class="ph codeph">Expanded</samp> and <samp class="ph codeph">Collapsed</samp> XML views.<div class="note note"><span class="notetitle">Note</span> Naming
+						guideline: Call these files <samp class="ph codeph">BlockNameCollapsed.view.xml</samp>,
+							<samp class="ph codeph">BlockNameExpanded.view.xml</samp></div>
+</div>
+
+			</li>
+
+			<li class="li">
+				<p class="p">If needed, add the associated controllers. Whether you use the same controller for all views
+					or one controller per view is your decision.</p>
+
+			</li>
+
+		</ul>
+
+		<p class="p"><span class="ph emphasis emphasis">Free Form Block Creation</span></p>
+
+		<ul class="ul" id="loio2978f6064742456ebed31c5ccf4d051d__ul_urt_bxj_ls">
+			<li class="li">
+				<p class="p">Create the block folder in the source control of the app.</p>
+
+			</li>
+
+			<li class="li">
+				<p class="p">Add a <samp class="ph codeph">BlockName.js</samp> file which extends
+					<samp class="ph codeph">sap.uxap.BlockBase</samp>.</p>
+
+			</li>
+
+			<li class="li">
+				<p class="p">Override the <samp class="ph codeph">setMode</samp> method - from here on, all changes are up to you. </p>
+
+			</li>
+
+		</ul>
+
+	</div>
+
+</div></div>
+
+</body>
+</html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="abstract" content="The diagnostics window available in OpenUI5 is a support tool that runs within an existing OpenUI5 application."/>
+<meta name="description" content="The diagnostics window available in OpenUI5 is a support tool that runs within an existing OpenUI5 application."/>
+
+<link rel="stylesheet" type="text/css" href="css/documentation.css?x=8532973672337726"/>
+<title>Diagnostics Window</title>
+  <link rel="stylesheet" type="text/css" href="../../resources/sap/ui/demokit/themes/base/highlight-query-terms.css" />
+    <link rel="stylesheet" type="text/css" href="../../resources/sap/ui/demokit/js/google-code-prettify/prettify.css" />
+    <script src="../../resources/sap/ui/demokit/js/sdk-pagehelper.js"></script>
+  </head>
+<body class="" id="loio6ec18e80b0ce47f290bc2645b0cc86e6">
+<div id="wrapper"><div id="container">
+
+	<h1 class="title topictitle1"> Diagnostics Window</h1>
+
+	
+	<div class="body"><p class="shortdesc">The diagnostics window available in <span class="ph"><span class="ph pname">OpenUI5</span></span> is a support tool that
+		runs within an existing <span class="ph"><span class="ph pname">OpenUI5</span></span>
+		application. </p>
+
+		<p class="p">To call the diagnostics window, use the following shortcut: <span class="keys">
+				<kbd class="key">CTRL</kbd>
+				 + <kbd class="key">SHIFT</kbd>
+				 + <kbd class="key">ALT</kbd>
+				 + <kbd class="key">S</kbd>
+			</span>. The individual features of this support tool are described in following
+			sections.</p>
+
+		<div class="section"><div class="section_title">Activating the Debug Sources</div><div type="Activating the Debug Sources"><p class="p">To use the debugging function, it is
+				important to use the debug sources. To enable these, set the <span class="ph uicontrol">Debug
+					Sources</span> function to <span class="ph uicontrol">ON</span> using the toggle
+				switch provided.</p>
+<img class="image" id="loio6ec18e80b0ce47f290bc2645b0cc86e6__image_tp2_t1m_rl" src="loiof4a654e9c5f049819aa51e1b7c77f1f5_LowRes.jpg" alt="SAPUI5 Diagnostics Debug Sources" title="SAPUI5 Diagnostics Debug Sources"/></div></div>
+
+		<div class="section"><div class="section_title">Control Tree</div><div type="Control Tree">
+			
+			<p class="p">The control tree shows all controls that are contained in the application in a tree
+				view. You can select controls either directly in the application by choosing
+					<samp class="ph codeph">CRTL+SHIFT+ALT</samp> and clicking on the control, or by selecting the
+				control in the control tree.</p>
+
+			<p class="p">The following functions are available in the dialog:</p>
+
+			<ul class="ul" id="loio6ec18e80b0ce47f290bc2645b0cc86e6__ul_hpw_z1m_rl">
+				<li class="li"><p class="p">On the <span class="ph uicontrol">Properties</span> tab you can change the defined properties of the
+						selected control. In the example below, you can change the value, the text
+						direction, and enable or disenable the control.</p>
+<img class="image" id="loio6ec18e80b0ce47f290bc2645b0cc86e6__image_v1x_wcm_rl" src="loio09bc00bbc88c41688256b95281f7d70c_LowRes.png" alt="SAPUI5 Diagnostics Changing Control Properties" title="SAPUI5 Diagnostics Changing Control Properties"/></li>
+
+				<li class="li">
+					<p class="p">The <span class="ph uicontrol">Binding Infos</span> tab shows all existing bindings for
+						the selected control together with additional information. To update the
+						binding, choose <span class="ph uicontrol">Refresh</span>.</p>
+
+					<p class="p"><img class="image" id="loio6ec18e80b0ce47f290bc2645b0cc86e6__image_m1z_nfm_rl" src="loioc1c21aef90264e9d8150f8520eb5e877_LowRes.png" alt="SAPUI5 Diagnostics Binding Information" title="SAPUI5 Diagnostics Binding Information"/></p>
+
+					<p class="p">You can also see the binding context for the selected control. To navigate to
+						the respective controls, use the hyperlinks.</p>
+
+				</li>
+
+				<li class="li">
+					<p class="p">On the <span class="ph uicontrol">Properties</span> tab, you can add or remove
+						breakpoints. Use the respective checkbox to add or remove a breakpoint for
+						the get/set method of a control property.</p>
+
+					<p class="p"><img class="image" id="loio6ec18e80b0ce47f290bc2645b0cc86e6__image_qx3_2gm_rl" src="loio0c1a0b1be01d4229ac1ad7293e8859e9_LowRes.png" alt="SAPUI5 Diagnostics Property Breakpoints" title="SAPUI5 Diagnostics Property Breakpoints"/></p>
+
+				</li>
+
+				<li class="li"><p class="p">On the <span class="ph uicontrol">Breakpoints</span> tab, you can add or remove breakpoints for
+						methods. You can either select the method from the dropdown box, or use
+						auto-completion. To set the breakpoint, select the method and choose
+							<span class="ph uicontrol">Add breakpoint</span>. To remove a breakpoint, select
+						the red x.</p>
+<img class="image" id="loio6ec18e80b0ce47f290bc2645b0cc86e6__image_bd4_ypd_tl" src="loiof8decdce93a9440588ce2ea111b7b741_LowRes.png" alt="SAPUI5 Diagnostics Method Breakpoints" title="SAPUI5 Diagnostics Method Breakpoints"/></li>
+
+			</ul>
+
+		</div></div>
+
+		<div class="section"><div class="section_title">Debugging a Method</div><div type="Debugging a Method"><p class="p">To debug a method, open and activate your browser's
+				debugging tool. If you execute a method with an active breakpoint, the script stops
+				at the debugger statement. To open the method, use the step-over/into function of
+				your debugger.</p>
+<img class="image" id="loio6ec18e80b0ce47f290bc2645b0cc86e6__image_ohz_kqd_tl" src="loio0c5fd07a09334613a439af5c0729137a_LowRes.png" alt="SAPUI5 Diagnostics Debugging a Method" title="SAPUI5 Diagnostics Debugging a Method"/><img class="image" id="loio6ec18e80b0ce47f290bc2645b0cc86e6__image_cvm_brd_tl" src="loio960e88f004364a7d8bf0177c728d08ca_LowRes.png" alt="SAPUI5 Diagnostics Debugging" title="SAPUI5 Diagnostics Debugging"/></div></div>
+
+		<div class="section"><div class="section_title">Debugging View</div><div type="Debugging View"><p class="p">The <span class="ph uicontrol">Debugging</span> view allows you to
+				set breakpoints for methods on class level. Select the class from the dropdown box
+				or enter the name of the class. Choose <span class="ph uicontrol">Add</span> to set the
+				breakpoint. For each class, the system shows the number of active breakpoints and
+				all methods.</p>
+<img class="image" id="loio6ec18e80b0ce47f290bc2645b0cc86e6__image_uzg_lrd_tl" src="loio64d3bfdd0f784ae68030208523452899_LowRes.png" alt="SAPUI5 Diagnostics Debugging View" title="SAPUI5 Diagnostics Debugging View"/><p class="p">At the top of the <span class="ph uicontrol">Debugging</span> view panel, you can also
+				configure a custom URL from which the application should load <span class="ph"><span class="ph pname">OpenUI5</span></span> during the next
+				startup, as shown in the figure below:</p>
+<div class="fig fignone" id="loio6ec18e80b0ce47f290bc2645b0cc86e6__fig_axp_gkn_ks"><div class="figcontainer">
+				<img class="image" id="loio6ec18e80b0ce47f290bc2645b0cc86e6__image_h5x_jkn_ks" src="loio51c77c636f9f4c8f85727b7bee971c9e_LowRes.png" alt="Configuring a Custom URL in the Debugging View" title="Configuring a Custom URL in the Debugging View"/>
+			</div></div>
+<p class="p">Either select a known <span class="ph"><span class="ph pname">OpenUI5</span></span> installation
+				from the dropdown box, or enter a different URL that points to the
+					<samp class="ph codeph">sap-ui-core.js</samp> file within a complete <span class="ph"><span class="ph pname">OpenUI5</span></span> runtime.
+				</p>
+<p class="p">Once you have entered the URL, press <span class="ph uicontrol">Activate Reboot
+					URL</span>. When you then reload the application page, the application will
+				load <span class="ph"><span class="ph pname">OpenUI5</span></span> from the
+				alternative URL you selected or entered. This will only happen for the next single
+				reboot; after that, <span class="ph"><span class="ph pname">OpenUI5</span></span> will be loaded
+				again from the standard URL referenced within the application.</p>
+<p class="p">This feature
+				can be used to test an application against a newer or older version of <span class="ph"><span class="ph pname">OpenUI5</span></span> as part of
+				compatibility testing, or for verifying a bug fix or regression date.</p>
+</div></div>
+
+		<div class="section"><div class="section_title">XML View Conversion</div><div type="XML View Conversion">
+			
+			<p class="p">Many code samples are written in JavaScript. To facilitate the conversion of these code
+				samples into XML, <span class="ph"><span class="ph pname">OpenUI5</span></span> provides a generic conversion tool. To run the tool, proceed as follows:</p>
+
+			<ol class="ol" id="loio6ec18e80b0ce47f290bc2645b0cc86e6__ol_ivj_llq_xm">
+				<li class="li">Run the <span class="ph"><span class="ph pname">OpenUI5</span></span> app in your browser, for example, open a page in the test
+					suite.</li>
+
+				<li class="li">Open the support tool by choosing CTRL+ALT+SHIFT+S.</li>
+
+				<li class="li">Open the <span class="ph uicontrol">Control Tree</span> panel.</li>
+
+				<li class="li">Select the root UI area in the tree on the left hand side.</li>
+
+				<li class="li">Open the <span class="ph uicontrol">Export</span> tab and choose <span class="ph uicontrol">Export
+					XML</span>.</li>
+
+				<li class="li">Open the ZIP archive and extract the files to your file system.</li>
+
+			</ol>
+
+			<p class="p">If your app does <span class="ph emphasis emphasis">not</span> contain views, the content is put in one
+				view in the output. If your app contains views and all views are loaded, the content
+				is output as separate files.</p>
+
+			<div class="note note"><span class="notetitle">Note</span> 
+				<p class="p">The conversion captures the runtime status of the app. This can differ from the
+					build declaration.</p>
+
+			</div>
+
+		</div></div>
+
+		<div class="section"><div class="section_title">Performance Data Visualization</div><div type="Performance Data Visualization"><p class="p">With this feature, you can collect and
+				visualize the performance data collected for the interaction steps in an easy and
+				intuitive way. In addition, you can enable statistics for OData calls that give you
+				information about the app processing time taken by the OData back end.</p>
+<p class="p"><img class="image" id="loio6ec18e80b0ce47f290bc2645b0cc86e6__image_nmx_3hq_dv" src="loioe6e8db41d1994b6f8ffb36e7fb6f5dd7_HiRes.png"/></p>
+<div class="sectiondiv subsection">
+				<p class="p subsectiontitle"><span class="ph emphasis emphasis">Activation</span></p>
+
+				<p class="p">You can start the interaction data collection in the following ways:</p>
+
+				<ul class="ul" id="loio6ec18e80b0ce47f290bc2645b0cc86e6__ul_k52_y2t_cv">
+					<li class="li">
+						<p class="p">Enable interaction steps recording:</p>
+
+						<ul class="ul" id="loio6ec18e80b0ce47f290bc2645b0cc86e6__ul_nc2_1ft_cv">
+							<li class="li">
+								<p class="p">To measure the initial loading of the app, add the query string
+									parameter <samp class="ph codeph">sap-ui-xx-fesr=true</samp> at the end of the
+									application URL and reload.</p>
+
+							</li>
+
+							<li class="li">To measure the interaction performance, choose <span class="ph uicontrol">Start
+									recording</span> from the
+									<span class="ph uicontrol">Interaction</span> panel and then switch back to
+								the app to do the steps that you want to record. Each user activity,
+								such as clicking buttons or list items or scrolling a list, triggers
+								an interaction. The end of an interaction is when the UI is fully
+								updated by the app. The collected data is displayed once you choose
+									<span class="ph uicontrol">Stop Recording</span>.</li>
+
+						</ul>
+
+					</li>
+
+					<li class="li">
+						<p class="p">You can enable the OData statistics by using query string URL parameter
+								<samp class="ph codeph">sap-statistics=true</samp>, or from the UI by selecting
+								<span class="ph uicontrol">Enable OData Statistics</span>.</p>
+
+					</li>
+
+				</ul>
+
+			</div><div class="sectiondiv subsection">
+				<p class="p subsectiontitle"><span class="ph emphasis emphasis">Output</span></p>
+
+				<ul class="ul" id="loio6ec18e80b0ce47f290bc2645b0cc86e6__ul_jrf_b5t_cv">
+					<li class="li">
+						<p class="p"><span class="ph emphasis emphasis">Interaction details</span> - Selecting an interaction step
+							bar, opens a dialog with details about the selected interaction:
+							end-to-end duration, total number of requests, the size of the
+							transferred data and so on.</p>
+
+						<p class="p"><img class="image" id="loio6ec18e80b0ce47f290bc2645b0cc86e6__image_j24_nhq_dv" src="loio7d40a20675b64e8baf102cab222e4c27_HiRes.png"/></p>
+
+					</li>
+
+					<li class="li">
+						<p class="p"><span class="ph emphasis emphasis">Interaction requests</span> - All interactions contain 0 to
+							N requests, which can be displayed in a list by selecting the expand
+							icon.</p>
+
+					</li>
+
+					<li class="li">
+						<p class="p"><span class="ph emphasis emphasis">Request details</span> - Selecting a request opens a dialog
+							with details, such as request type, URI, overall duration and how it is
+							spread across client, server, and connection establishing processing.
+							When OData statistics are enabled and the request is processed by the
+								<span class="ph pname">SAP NetWeaver</span>
+							OData gateway, in the details dialog there is a section with OData times
+							– <span class="ph uicontrol">Gateway Total</span>,
+							<span class="ph uicontrol">Framework</span>, and <span class="ph uicontrol">Application</span>
+							processing times.</p>
+
+						<div class="p">
+							<div class="note note"><span class="notetitle">Note</span> 
+								<p class="p">The OData time (<span class="ph uicontrol">Gateway Total</span>) is included
+									in the total server time processing. Such requests and their
+									interaction are identified with a blue icon <img class="image" id="loio6ec18e80b0ce47f290bc2645b0cc86e6__image_b4p_ckq_dv" src="loioa3e8b8dd408e45b5af9d30d0c1be4b3d_HiRes.png"/>.</p>
+
+							</div>
+
+						</div>
+
+						<p class="p"><img class="image" id="loio6ec18e80b0ce47f290bc2645b0cc86e6__image_vcc_v3q_dv" src="loio2c0df2f81d7540b98943eed368d1db0d_HiRes.png"/></p>
+
+					</li>
+
+				</ul>
+
+			</div><div class="sectiondiv subsection">
+				<p class="p subsectiontitle"><span class="ph emphasis emphasis">Additional features</span></p>
+
+				<ul class="ul" id="loio6ec18e80b0ce47f290bc2645b0cc86e6__ul_ix2_25t_cv">
+					<li class="li">
+						<p class="p"><span class="ph emphasis emphasis">Export</span> - Collected data can be exported as a ZIP
+							archive for easy distribution through e-mail.</p>
+
+					</li>
+
+					<li class="li">
+						<p class="p"><span class="ph emphasis emphasis">Import</span> - Already collected data stored as an archive
+							can be visualized again, using the <span class="ph uicontrol">Import</span>
+							function. The input can be either an already exported archive file or
+							directly the JSON file that contains the performance data. This enables
+							remote analysis of app data by another team/expert.</p>
+
+					</li>
+
+				</ul>
+
+			</div></div></div>
+
+		
+	</div>
+
+</div></div>
+
+</body>
+</html>

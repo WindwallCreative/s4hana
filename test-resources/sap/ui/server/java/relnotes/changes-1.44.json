@@ -1,0 +1,13 @@
+{
+  "1.44.2": {
+    "date": "November 2016",
+    "notes": [
+      {
+        "id": "68d0aa49e6bbcd7268619cc90535950ed794b0c4",
+        "type": "FIX",
+        "text": " ResourceServlet: support proper mime type for source maps",
+        "references": []
+      }
+    ]
+  }
+}

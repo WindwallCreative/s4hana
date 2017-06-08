@@ -1,0 +1,133 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="abstract" content="With this release the UI development toolkit for HTML5 (OpenUI5) is upgraded from version 1.24 to 1.26."/>
+<meta name="description" content="With this release the UI development toolkit for HTML5 (OpenUI5) is upgraded from version 1.24 to 1.26."/>
+
+<link rel="stylesheet" type="text/css" href="css/documentation.css?x=09744441193613196"/>
+<title>What's New in OpenUI5 1.26</title>
+  <link rel="stylesheet" type="text/css" href="../../resources/sap/ui/demokit/themes/base/highlight-query-terms.css" />
+    <link rel="stylesheet" type="text/css" href="../../resources/sap/ui/demokit/js/google-code-prettify/prettify.css" />
+    <script src="../../resources/sap/ui/demokit/js/sdk-pagehelper.js"></script>
+  </head>
+<body class="">
+<div id="wrapper"><div id="container">
+<div class="nested0" id="loio2bfac839aa21483f89403dc4ab090724">
+	<h1 class="title topictitle1">What's New in <span class="ph"><span class="ph pname">OpenUI5</span></span> 1.26</h1>
+
+	
+	<div class="body conbody"><p class="shortdesc">With this release the <span class="ph pname">UI development toolkit for HTML5</span>
+			(<span class="ph"><span class="ph pname">OpenUI5</span></span>) is upgraded from
+		version 1.24 to 1.26.</p>
+
+		<p class="p">The following sections highlight the main new features and enhancements to <span class="ph"><span class="ph pname">OpenUI5</span></span>. <span class="ph">For a complete,
+				detailed list of all new and enhanced functions, see: <a class="xref" href="../../releasenotes.html" alt="../../releasenotes.html" title="../../releasenotes.html">Change Log</a>.</span></p>
+
+		<div class="section"><div class="section_title">Main New Features</div><div type="Main New Features">
+			
+			<p class="p"><span class="ph emphasis emphasis">New OData Model Implementation</span>: Features greatly improved two-way binding
+				and $batch support, as well as improved performance overall through reduced and more
+				asynchronous requests. <span class="ph">For more information,
+					see the <a class="xref" href="../../docs/api/symbols/sap.ui.model.odata.v2.ODataModel.html" alt="../../docs/api/symbols/sap.ui.model.odata.v2.ODataModel.html" title="../../docs/api/symbols/sap.ui.model.odata.v2.ODataModel.html">API Reference documentation</a>.</span></p>
+
+			<p class="p"><span class="ph emphasis emphasis">Support for Windows Phone</span> (IE11 in Windows Phone 8.1 update 1): This
+				support is valid for the following libraries (those supporting mobile devices):
+					<samp class="ph codeph">sap.m</samp>, <samp class="ph codeph">sap.ui.core</samp>,
+					<samp class="ph codeph">sap.ui.layout</samp> and <samp class="ph codeph">sap.ui.unified</samp>. </p>
+
+			<p class="p"><span class="ph emphasis emphasis">Usability Enhancements - Keyboard Shortcuts</span>: Version 1.26 contains
+				enhanced usability features, including new keyboard shortcuts for SAPUI5
+				controls.</p>
+
+			<p class="p"><span class="ph emphasis emphasis">Usability Enhancements - High Contrast Black</span>: Version 1.26 also includes
+				High Contrast Black (HCB) theme support for the <samp class="ph codeph">sap.m</samp> library.</p>
+
+			<p class="p"><span class="ph emphasis emphasis">Fast Keyboard Navigation</span>: The new fast keyboard navigation allows you to
+				navigate quickly between groups using <kbd class="key">F6</kbd>. For more information, see <a class="xref" href="10b14c7284ba48a185ae2046db470706.html" title="Adjacent controls within the tab chain can be grouped. Within such a group, F6 skips all controls of the group and moves the focus to the first control in the tab chain of the next group. Shift F6 moves the focus to the first control of the previous group. Adjacent tab chain elements between groups are automatically handled as one group. For nested groups, the most concrete group is used.">Defining Groups for Fast Navigation (F6)</a>.</p>
+
+			<p class="p"><span class="ph emphasis emphasis">Mobile Diagnostics</span>: We have improved the structure of the mobile
+				diagnostics dialog and added a new function for end-to-end (E2E) tracing. You can
+				now open the dialog with the following touch combination: press two fingers on a
+				non-interactive screen area (for example, a blank area) for at least 3 seconds, then
+				tap with a third finger while still holding the other two on the screen. For more
+				information, see <a class="xref" href="616a3ef07f554e20a3adf749c11f64e9.html" title="OpenUI5 features a technical information dialog that provides you with information and functions that you can use within an existing OpenUI5 desktop or mobile application. The look and feature set of this dialog is different for desktop and mobile devices, as outlined below.">Technical Information Dialog</a>.</p>
+
+			<p class="p"><span class="ph emphasis emphasis">jQuery 1.11.1</span>: This version of jQuery is now used by default.</p>
+
+			<p class="p"><span class="ph emphasis emphasis">Extensibility</span>: ExtensionPoints are now also offered in JSViews and
+				controls can be hidden in all View types.</p>
+
+			<p class="p"><span class="ph emphasis emphasis">OPA (One Page Acceptance) Tests</span>: The OPA tests have been improved. There
+				is now a new way to structure your OPA tests: If you have multiple pages or UI areas
+				that have several operations, you should place them as reuse functionality in page
+				objects to make your OPA tests easier to maintain.</p>
+
+			<p class="p"><span class="ph emphasis emphasis"><samp class="ph codeph">Visible</samp> Attribute</span>: A <samp class="ph codeph">visible</samp> attribute
+				is now available for all controls, as they now inherit this property from the
+					<samp class="ph codeph">sap.ui.core.Control</samp> class.</p>
+
+			
+			<p class="p"><span class="ph emphasis emphasis">New Node Type for <samp class="ph codeph">sap.suite.ui.commons.ProcessFlow</samp></span>: The
+				node type <span class="ph uicontrol">Planned with Issue</span> is now available for
+					<samp class="ph codeph">sap.suite.ui.commons.ProcessFlow</samp>, meaning you can now choose
+				between using a node <span class="ph uicontrol">Planned</span> without a status, or with the
+				status <span class="ph uicontrol">Planned with Issue</span>.</p>
+
+		</div></div>
+
+		<div class="section"><div class="section_title">Main New Controls</div><div type="Main New Controls">
+			
+			<p class="p"><span class="ph emphasis emphasis"><samp class="ph codeph">sap.ui.layout.FixFlex</samp></span>: This new control addresses the
+				common layout use case where one part of the UI has a certain size (which may be
+				set, or may be defined by the content size) and the other part of the UI should use
+				all of the remaining space (horizontally and vertically). It also supports Internet
+				Explorer 9 (which is not supported by the more powerful
+					<samp class="ph codeph">sap.m.Flexbox</samp> control).</p>
+
+			<p class="p"><span class="ph emphasis emphasis"><samp class="ph codeph">sap.m.RadioButtonGroup</samp></span>: This new control improves the
+				use of layouting, keyboard navigation and data binding for radio buttons. <span class="ph">For more information,
+					see the <a class="xref" target="_blank" href="../../explored.html#/sample/sap.m.sample.RadioButtonGroup/preview" alt="../../explored.html#/sample/sap.m.sample.RadioButtonGroup/preview" title="../../explored.html#/sample/sap.m.sample.RadioButtonGroup/preview">Explored</a> example in the Demo
+					Kit.</span></p>
+
+			<p class="p"><span class="ph emphasis emphasis"><samp class="ph codeph">sap.m.SelectList</samp></span>: <span class="ph">For more information,
+				see the <a class="xref" target="_blank" href="../../explored.html#/sample/sap.m.sample.SelectList/preview" alt="../../explored.html#/sample/sap.m.sample.SelectList/preview" title="../../explored.html#/sample/sap.m.sample.SelectList/preview">Explored</a> example in the Demo
+					Kit.</span></p>
+
+			<p class="p"><span class="ph emphasis emphasis"><samp class="ph codeph">sap.m.UploadCollection</samp></span>: This new control is a list
+				control for attachment management. It is based on the
+					<samp class="ph codeph">sap.ui.unified.FileUploader</samp> control and allows you to upload,
+				edit or delete attachments. <span class="ph">For more
+					information, see the <a class="xref" href="../../docs/api/symbols/sap.m.UploadCollection.html" alt="../../docs/api/symbols/sap.m.UploadCollection.html" title="../../docs/api/symbols/sap.m.UploadCollection.html">API Reference Documentation</a> or the <a class="xref" target="_blank" href="../../explored.html#/entity/sap.m.UploadCollection/samples" alt="../../explored.html#/entity/sap.m.UploadCollection/samples" title="../../explored.html#/entity/sap.m.UploadCollection/samples">Explored</a> example in the Demo Kit.</span></p>
+
+			
+			
+		</div></div>
+
+	</div>
+
+<div class="related-links"> 
+
+<div class="familylinks">
+<div class="parentlink"><br/>
+<strong>Parent topic: </strong><a class="link" href="6660a59a8a22460a91fe65a0d96a567e.html">Previous Versions</a><br/>
+</div>
+</div>
+<div class="relinfo"><div class="relinfotitle ">Related Information</div>
+<div><a class="link" href="05ce1dc72c74475bada39234f6721f21.html" title="With this release, the UI development toolkit for HTML5 (OpenUI5) is upgraded from version 1.42 to 1.44.">What's New in OpenUI5 1.44</a></div>
+<div><a class="link" href="4768f1ac7f0645929b4e9ea9981bb65e.html" title="With this release the UI development toolkit for HTML5 (OpenUI5) is upgraded from version 1.40 to 1.42.">What's New in OpenUI5 1.42</a></div>
+<div><a class="link" href="e659bd2383524a05b716916bcda9b368.html" title="With this release the UI development toolkit for HTML5 (OpenUI5) is upgraded from version 1.38 to 1.40.">What's New in OpenUI5 1.40</a></div>
+<div><a class="link" href="6a875f998994489483e8085705347d72.html#loio6a875f998994489483e8085705347d72" title="With this release the UI development toolkit for HTML5 (OpenUI5) is upgraded from version 1.36 to 1.38.">What's New in OpenUI5 1.38</a></div>
+<div><a class="link" href="8d36a5a5f57a409792fb36a3f4940cdb.html#loio8d36a5a5f57a409792fb36a3f4940cdb" title="With this release the UI development toolkit for HTML5 (OpenUI5) is upgraded from version 1.34 to 1.36.">What's New in OpenUI5 1.36</a></div>
+<div><a class="link" href="2eba716185154494ac0b44cddd2e4c8e.html#loio2eba716185154494ac0b44cddd2e4c8e" title="With this release the UI development toolkit for HTML5 (OpenUI5) is upgraded from version 1.32 to 1.34.">What's New in OpenUI5 1.34</a></div>
+<div><a class="link" href="c7c26285a53b461cbecb3da2c51a2f64.html#loioc7c26285a53b461cbecb3da2c51a2f64" title="With this release the UI development toolkit for HTML5 (OpenUI5) is upgraded from version 1.30 to 1.32.">What's New in OpenUI5 1.32</a></div>
+<div><a class="link" href="dec9d4c7d12d479d98483e2e46643e01.html#loiodec9d4c7d12d479d98483e2e46643e01" title="With this release the UI development toolkit for HTML5 (OpenUI5) is upgraded from version 1.28 to 1.30.">What's New in OpenUI5 1.30</a></div>
+<div><a class="link" href="4c605d154a894dc1a0a4662eb8c6cc63.html#loio4c605d154a894dc1a0a4662eb8c6cc63" title="With this release the UI development toolkit for HTML5 (OpenUI5) is upgraded from version 1.26 to 1.28.">What's New in OpenUI5 1.28</a></div>
+</div>
+</div>
+</div>
+</div></div>
+
+</body>
+</html>

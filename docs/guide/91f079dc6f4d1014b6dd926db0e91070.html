@@ -1,0 +1,86 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="abstract" content="Collection of exceptions from the OpenUI5 browser and platform support matrix, for the sap.m library."/>
+<meta name="description" content="Collection of exceptions from the OpenUI5 browser and platform support matrix, for the sap.m library."/>
+
+<link rel="stylesheet" type="text/css" href="css/documentation.css?x=8952025745141587"/>
+<title>sap.m</title>
+  <link rel="stylesheet" type="text/css" href="../../resources/sap/ui/demokit/themes/base/highlight-query-terms.css" />
+    <link rel="stylesheet" type="text/css" href="../../resources/sap/ui/demokit/js/google-code-prettify/prettify.css" />
+    <script src="../../resources/sap/ui/demokit/js/sdk-pagehelper.js"></script>
+  </head>
+<body class="" id="loio91f079dc6f4d1014b6dd926db0e91070">
+<div id="wrapper"><div id="container">
+
+	<h1 class="title topictitle1">sap.m</h1>
+
+	
+	<div class="body conbody"><p class="shortdesc">Collection of exceptions from the <span class="ph"><span class="ph pname">OpenUI5</span></span> browser and platform
+		support matrix, for the <samp class="ph codeph">sap.m</samp> library.</p>
+
+		<div class="note note"><span class="notetitle">Note</span> 
+			<p class="p">The following information contains <span class="ph emphasis emphasis">only the differences</span> to the listed
+				information in the <a class="xref" href="74b59efa0eef48988d3b716bd0ecc933.html" title="Browser and platform support for the OpenUI5 libraries on iOS, Android, macOS, and Windows platforms.">Browser and Platform Support</a>, which
+				includes:</p>
+
+			<ul class="ul" id="loio91f079dc6f4d1014b6dd926db0e91070__ul_n2b_p3n_kx">
+				<li class="li">
+					<p class="p">Browsers, platforms, and reference devices that are NOT supported by a
+						specific library, but are generally supported.</p>
+
+				</li>
+
+				<li class="li">
+					<p class="p">Additionally supported browsers, platforms, and reference devices that are NOT supported in
+						general.</p>
+
+				</li>
+
+				<li class="li">
+					<p class="p">Any other specifics or restrictions that contradict the general
+						information.</p>
+
+				</li>
+
+			</ul>
+
+		</div>
+
+		<ul class="ul" id="loio91f079dc6f4d1014b6dd926db0e91070__ul_djg_yv2_jx">
+			<li class="li">For the <span class="keyword apiname">maxLines</span> property of the <samp class="ph codeph">sap.m.Text</samp>
+				control, multiline ellipsis handling is not supported for all browsers and devices
+				and is not supported at all for right-to-left text direction. For more information,
+				see <a class="xref" href="f08f29636be1472dac8f35fe7918ee08.html" title="Depending on the combination of device and browser, visual degradations may occur in the sap.m library.">Visual
+				Degradations</a>.</li>
+
+			<li class="li">Certain new or more complex controls that do not yet offer mobile device support
+				also do not support Windows Phone at this time, such as:
+					<samp class="ph codeph">sap.m.FacetFilter</samp> and
+				<samp class="ph codeph">sap.m.MultiComboBox</samp>.</li>
+
+			<li class="li">When using the <span class="keyword apiname">redirect</span> method of the
+					<samp class="ph codeph">sap.m.URLHelper</samp> control, note that some browsers fail to open a
+				new window or tab. This is the case for Windows Phone, for instance. As the
+					<span class="keyword apiname">redirect</span> method is simply a wrapper of
+					<span class="keyword apiname">window.open</span> native JavaScript, the problem is that Internet
+				Explorer 10 for Windows Phone is unable to return a valid window object for
+					<span class="keyword apiname">window.open</span>. In addition, popup blockers can also prevent
+				this function from working properly.</li>
+
+		</ul>
+
+	</div>
+<div class="related-links"> <br/>
+<div class="childtopics"><strong>In this section:</strong></div><ul class="ullinks">
+<div><strong><a class="link" href="f08f29636be1472dac8f35fe7918ee08.html" title="Depending on the combination of device and browser, visual degradations may occur in the sap.m library.">Visual Degradations</a></strong><br/>
+</div>
+</ul>
+
+</div>
+</div></div>
+
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="abstract" content="With this release the UI development toolkit for HTML5 (OpenUI5) is upgraded from version 1.34 to 1.36."/>
+<meta name="description" content="With this release the UI development toolkit for HTML5 (OpenUI5) is upgraded from version 1.34 to 1.36."/>
+
+<link rel="stylesheet" type="text/css" href="css/documentation.css?x=27790290711662335"/>
+<title>What's New in OpenUI5 1.36</title>
+  <link rel="stylesheet" type="text/css" href="../../resources/sap/ui/demokit/themes/base/highlight-query-terms.css" />
+    <link rel="stylesheet" type="text/css" href="../../resources/sap/ui/demokit/js/google-code-prettify/prettify.css" />
+    <script src="../../resources/sap/ui/demokit/js/sdk-pagehelper.js"></script>
+  </head>
+<body class="">
+<div id="wrapper"><div id="container">
+<div class="nested0" id="loio8d36a5a5f57a409792fb36a3f4940cdb">
+	<h1 class="title topictitle1">What's New in <span class="ph"><span class="ph pname">OpenUI5</span></span> 1.36</h1>
+
+	
+	<div class="body conbody"><p class="shortdesc">With this release the <span class="ph pname">UI development toolkit for HTML5</span> (<span class="ph"><span class="ph pname">OpenUI5</span></span>) is upgraded from version 1.34 to 1.36.</p>
+
+		<p class="p">In the following sections, we list the main new features and enhancements to <span class="ph"><span class="ph pname">OpenUI5</span></span>. <span class="ph">For a complete, detailed list of all new and enhanced functions,
+				see: <a class="xref" href="../../releasenotes.html" alt="../../releasenotes.html" title="../../releasenotes.html">Change Log</a>.</span></p>
+
+		
+		<div class="section collapsible"><div class="section_title">New Features</div><div type="New Features">
+			
+			<ul class="ul" id="loio8d36a5a5f57a409792fb36a3f4940cdb__ul_apq_p3v_w5">
+				<li class="li">
+					<p class="p">The <span class="ph emphasis emphasis">OData Model V2</span> now supports binding against function import
+						parameters. If the function import returns result data, then this result
+						data can also be accessed and bound. For more information, see <a class="xref" href="6c47b2b39db9404582994070ec3d57a2.html#loio6c47b2b39db9404582994070ec3d57a2" title="The OData V2 Model enables binding of controls to data from OData services.">OData V2 Model</a>.</p>
+
+				</li>
+
+				<li class="li">
+					<p class="p">You can use <span class="ph emphasis emphasis"><samp class="ph codeph">jQuery.sap.measure</samp> to measure the performance</span> of your JavaScript code. You can retrieve the
+						results via APIs. You can calculate averages and use filters or categories. For more information, see <a class="xref" href="78880c09a1954a02b49c21357d45c91f.html" title="You can use jQuery.sap.measure to measure the performance of your JavaScript code.">Performance Measurement Using jQuery.sap.measure</a>.</p>
+
+				</li>
+
+			</ul>
+
+		</div></div>
+
+		
+		<div class="section collapsible"><div class="section_title">Improved Features</div><div type="Improved Features">
+			
+			<ul class="ul" id="loio8d36a5a5f57a409792fb36a3f4940cdb__ul_kfq_shv_w5">
+				<li class="li">
+					<div class="p"><span class="ph emphasis emphasis">Performance improvements:</span><ul class="ul" id="loio8d36a5a5f57a409792fb36a3f4940cdb__ul_o3h_vsd_1v">
+							<li class="li">
+								<p class="p">When possible, data requests will now be send out before rendering is triggered to improve overall end-to-end
+									times.</p>
+
+							</li>
+
+							<li class="li">
+								<p class="p">Initial auto-expand to n levels is now supported in <samp class="ph codeph">TreeTable</samp> for OData-based services with fewer
+									requests based on a new OData annotation.</p>
+
+							</li>
+
+						</ul>
+</div>
+
+				</li>
+
+				<li class="li">
+					<p class="p"><span class="ph emphasis emphasis">Relative time formatter for <samp class="ph codeph">sap.ui.core.format.DateFormat</samp></span>: The new formatting options
+							<samp class="ph codeph">short</samp> and <samp class="ph codeph">narrow</samp> for the <samp class="ph codeph">relativeStyle</samp> allow a concise display of a
+						relative date like <kbd class="ph userinput">3 years ago</kbd> or <kbd class="ph userinput">2 hours ago</kbd>.</p>
+
+				</li>
+
+				<li class="li">
+					<div class="p"><span class="ph emphasis emphasis"><samp class="ph codeph">ABAP NUMC</samp> types</span> are now supported in annotation processing and OData types as follows:<ul class="ul" id="loio8d36a5a5f57a409792fb36a3f4940cdb__ul_y32_zbm_y5">
+							<li class="li">
+								<p class="p"><samp class="ph codeph">ABAP NUMC</samp> types can be represented in OData services as <samp class="ph codeph">Edm.String</samp> with OData v2
+									SAP Extension <samp class="ph codeph">'sap:display-format="NonNegative"'</samp> and constraint <samp class="ph codeph">'maxlength'</samp>
+									set.</p>
+
+							</li>
+
+							<li class="li">
+								<p class="p"><samp class="ph codeph">ODataMetaModel</samp> also provides the OData v2 SAP Extension
+										<samp class="ph codeph">'sap:display-format="NonNegative"'</samp> as v4
+									annotation
+										<samp class="ph codeph">'"com.sap.vocabularies.Common.v1.IsDigitSequence": {
+										"Bool" : "true" }'</samp>. For more information, see <a class="xref" href="6c47b2b39db9404582994070ec3d57a2.html#loio341823349ed04df1813197f2a0d71db2" title="The implementation sap.ui.model.odata.ODataMetaModel offers a unified access to both OData Version 2.0 metadata and Version 4.0 annotations.">Meta Model for OData V2</a>.</p>
+
+							</li>
+
+							<li class="li">
+								<p class="p"><samp class="ph codeph">AnnotationHelper.format</samp> considers the
+										<samp class="ph codeph">'com.sap.vocabularies.Common.v1.IsDigitSequence'</samp>
+									annotation and <samp class="ph codeph">'maxlength'</samp> constraint when
+									creating a binding. For more information, see <a class="xref" href="dbec058964f545e4bb3b7e9fbaa0602d.html" title="A collection of methods which help to consume OData Version 4.0 annotations in XML template views.">Annotation Helper</a>.</p>
+
+							</li>
+
+							<li class="li">
+								<p class="p"><samp class="ph codeph">sap.ui.model.odata.type.String</samp> reacts to the
+										<samp class="ph codeph">'com.sap.vocabularies.Common.v1.IsDigitSequence'</samp> annotation and <samp class="ph codeph">'maxlength'</samp>
+									constraint when processing its values.</p>
+
+								<p class="p">For more information, see the <a class="xref" href="../../docs/api/symbols/sap.ui.model.odata.type.String.html" alt="../../docs/api/symbols/sap.ui.model.odata.type.String.html" title="../../docs/api/symbols/sap.ui.model.odata.type.String.html">API Reference</a> in the Demo Kit.</p>
+
+							</li>
+
+						</ul>
+
+					</div>
+
+				</li>
+
+			</ul>
+
+		</div></div>
+
+		<div class="section collapsible"><div class="section_title">Improved Controls</div><div type="Improved Controls">
+			
+			<ul class="ul" id="loio8d36a5a5f57a409792fb36a3f4940cdb__ul_uyf_4zy_v5">
+				<li class="li">
+					<p class="p"><samp class="ph codeph">sap.m.FlexBox</samp>: The <samp class="ph codeph">FlexBox</samp> control now allows wrapping items into multiple lines and
+						influencing the layout of these lines. The sizing behavior of flex items can be adjusted with minimum or maximum width and
+						height values.</p>
+
+					<p class="p">For more information, see the <span class="ph uicontrol">API Reference</span> for
+							<a class="xref" href="../../docs/docs/api/symbols/sap.m.FlexBox.html" alt="../../docs/docs/api/symbols/sap.m.FlexBox.html" title="../../docs/docs/api/symbols/sap.m.FlexBox.html"><samp class="ph codeph">sap.m.FlexBox</samp></a> and <a class="xref" href="../../docs/docs/api/symbols/sap.m.FlexItemData.html" alt="../../docs/docs/api/symbols/sap.m.FlexItemData.html" title="../../docs/docs/api/symbols/sap.m.FlexItemData.html"><samp class="ph codeph">sap.m.FlexItemData</samp></a> in the Demo Kit.</p>
+
+				</li>
+
+				<li class="li">
+					<p class="p"><span class="ph emphasis emphasis"><samp class="ph codeph">sap.m.MultiInput</samp></span>: This control now has the new property <samp class="ph codeph">maxTokens</samp>, which defines the
+						maximum number of tokens that are allowed within the <samp class="ph codeph">MultiInput</samp>.</p>
+
+					<p class="p">For more information, see the <a class="xref" href="../../docs/docs/api/symbols/sap.m.MultiInput.html#setMaxTokens" alt="../../docs/docs/api/symbols/sap.m.MultiInput.html#setMaxTokens" title="../../docs/docs/api/symbols/sap.m.MultiInput.html#setMaxTokens">API Reference</a> and the <a class="xref" target="_blank" href="../../explored.html#/sample/sap.m.sample.MultiInputMaxTokens/preview" alt="../../explored.html#/sample/sap.m.sample.MultiInputMaxTokens/preview" title="../../explored.html#/sample/sap.m.sample.MultiInputMaxTokens/preview">sample</a> in the <span class="ph uicontrol">Explored</span> app in the Demo Kit.</p>
+
+				</li>
+
+				<li class="li">
+					<p class="p"><span class="ph emphasis emphasis"><samp class="ph codeph">sap.m.SearchField</samp></span>: This control now has a new suggestions feature. When a user enters something in the
+						search field, the application can now display a list of suggestions.</p>
+
+					<div class="fig fignone" id="loio8d36a5a5f57a409792fb36a3f4940cdb__fig_yfj_ss1_z5"><div class="figcontainer">
+						<img class="image" id="loio8d36a5a5f57a409792fb36a3f4940cdb__image_txs_ss1_z5" src="loio2ca9cab7b9634d7fb8e64e3cd67be88c_LowRes.png"/>
+					</div></div>
+
+					<p class="p">For more information, see the <a class="xref" href="../../docs/docs/api/symbols/sap.m.SearchField.html" alt="../../docs/docs/api/symbols/sap.m.SearchField.html" title="../../docs/docs/api/symbols/sap.m.SearchField.html">API Reference</a> and the <a class="xref" target="_blank" href="../../explored.html#/sample/sap.m.sample.SearchFieldSuggestions/preview" alt="../../explored.html#/sample/sap.m.sample.SearchFieldSuggestions/preview" title="../../explored.html#/sample/sap.m.sample.SearchFieldSuggestions/preview">sample</a> in the <span class="ph uicontrol">Explored</span> app in the Demo Kit.</p>
+
+				</li>
+
+				<li class="li">
+					<p class="p"><span class="ph emphasis emphasis"><samp class="ph codeph">sap.m.TimePicker</samp></span>: A user can now edit or delete values directly from the input field on mobile
+						devices.</p>
+
+				</li>
+
+				<li class="li">
+					<p class="p"><span class="ph emphasis emphasis"><samp class="ph codeph">sap.m.UploadCollection</samp></span>: You can now download an item
+						from the upload collection list. For this feature, two new methods have been
+						added, one to the <samp class="ph codeph">UploadCollection</samp> and the other to the
+							<samp class="ph codeph">UploadCollectionItem</samp>. This means you can choose from
+						where you want to call the method. Both methods allow you to define if the
+						default download location of the browser is used or if the file dialog is
+						called via a parameter to store to a different location. For more
+						information, see <a class="xref" href="124ee13b03664b14b455630fb8171996.html" title="Upload Collection is a list control for attachment management that provides the ability to upload, edit or delete attachments.">Upload Collection</a><span class="ph">,
+							the <a class="xref" href="../../docs/docs/api/symbols/sap.m.UploadCollection.html" alt="../../docs/docs/api/symbols/sap.m.UploadCollection.html" title="../../docs/docs/api/symbols/sap.m.UploadCollection.html">API Reference</a>, and the <a class="xref" target="_blank" href="../../explored.html#/entity/sap.m.UploadCollection/samples" alt="../../explored.html#/entity/sap.m.UploadCollection/samples" title="../../explored.html#/entity/sap.m.UploadCollection/samples">sample</a> in the
+								<span class="ph uicontrol">Explored</span> app in the Demo Kit</span>.</p>
+
+				</li>
+
+				<li class="li">
+					<p class="p"><span class="ph emphasis emphasis"><samp class="ph codeph">sap.m.Wizard</samp></span>: You can now add titles for steps (in addition to icons) that are shown in the progress
+						navigator of a wizard. Titles help users to relate the progress navigation part to the step content easily.</p>
+
+					<div class="fig fignone" id="loio8d36a5a5f57a409792fb36a3f4940cdb__fig_cgh_hvw_z5"><div class="figcontainer">
+						<img class="image" id="loio8d36a5a5f57a409792fb36a3f4940cdb__image_lsc_3vw_z5" src="loio98930544bddb440fb9f45b8d13571f46_LowRes.png"/>
+					</div></div>
+
+					<p class="p">For more information, see the <a class="xref" target="_blank" href="../../explored.html#/sample/sap.m.sample.WizardBranching/preview" alt="../../explored.html#/sample/sap.m.sample.WizardBranching/preview" title="../../explored.html#/sample/sap.m.sample.WizardBranching/preview">sample</a> in the <span class="ph uicontrol">Explored</span> app in the Demo Kit.</p>
+
+				</li>
+
+				<li class="li">
+					<p class="p"><span class="ph emphasis emphasis"><samp class="ph codeph">sap.ui.layout.DynamicSideContent</samp></span>: You can now
+						configure the position of the side content to appear either to the left or
+						to the right of the main content.</p>
+
+					<p class="p">For more information, see the <a class="xref" href="../../docs/docs/api/symbols/sap.ui.layout.DynamicSideContent.html" alt="../../docs/docs/api/symbols/sap.ui.layout.DynamicSideContent.html" title="../../docs/docs/api/symbols/sap.ui.layout.DynamicSideContent.html">API Reference</a> in the Demo Kit.</p>
+
+				</li>
+
+				<li class="li">
+					<p class="p"><span class="ph emphasis emphasis"><samp class="ph codeph">sap.ui.layout.form.Form</samp></span> and <span class="ph emphasis emphasis"><samp class="ph codeph">sap.ui.layout.form.SimpleForm</samp></span>:
+						Toolbars can now be used in <samp class="ph codeph">Form</samp> or <samp class="ph codeph">FormContainer</samp> headers.</p>
+
+					<div class="fig fignone" id="loio8d36a5a5f57a409792fb36a3f4940cdb__fig_tsn_ps1_z5"><div class="figcontainer">
+						<img class="image" id="loio8d36a5a5f57a409792fb36a3f4940cdb__image_pdh_qs1_z5" src="loio10d94d01b72e4db29170b76e7d570f92_LowRes.png"/>
+					</div></div>
+
+					<p class="p">For more information, see the <span class="ph uicontrol">API
+							Reference</span> for <a class="xref" href="../../docs/docs/api/symbols/sap.ui.layout.form.Form.html#setToolbar" alt="../../docs/docs/api/symbols/sap.ui.layout.form.Form.html#setToolbar" title="../../docs/docs/api/symbols/sap.ui.layout.form.Form.html#setToolbar"><samp class="ph codeph">Form</samp></a>, <a class="xref" href="../../docs/docs/api/symbols/sap.ui.layout.form.FormContainer.html#setToolbar" alt="../../docs/docs/api/symbols/sap.ui.layout.form.FormContainer.html#setToolbar" title="../../docs/docs/api/symbols/sap.ui.layout.form.FormContainer.html#setToolbar"><samp class="ph codeph">FormContainer</samp></a>, and <a class="xref" href="../../docs/docs/api/symbols/sap.ui.layout.form.SimpleForm.html#setToolbar" alt="../../docs/docs/api/symbols/sap.ui.layout.form.SimpleForm.html#setToolbar" title="../../docs/docs/api/symbols/sap.ui.layout.form.SimpleForm.html#setToolbar"><samp class="ph codeph">SimpleForm</samp></a> and the samples for <a class="xref" target="_blank" href="../../explored.html#/sample/sap.ui.layout.sample.FormToolbar/preview " alt="../../explored.html#/sample/sap.ui.layout.sample.FormToolbar/preview " title="../../explored.html#/sample/sap.ui.layout.sample.FormToolbar/preview "><samp class="ph codeph">FormToolbar</samp></a> and <a class="xref" target="_blank" href="../../explored.html#/sample/sap.ui.layout.sample.SimpleFormToolbar/preview" alt="../../explored.html#/sample/sap.ui.layout.sample.SimpleFormToolbar/preview" title="../../explored.html#/sample/sap.ui.layout.sample.SimpleFormToolbar/preview"><samp class="ph codeph">SimpleFormToolbar</samp></a> in the <span class="ph uicontrol">Explored</span> app in
+						the Demo Kit.</p>
+
+				</li>
+
+				<li class="li">
+					<p class="p"><span class="ph emphasis emphasis"><samp class="ph codeph">sap.ui.layout.form.SimpleForm</samp></span>: This control now has the new property <samp class="ph codeph">backgroundDesign</samp>,
+						which can be used to switch between different backgrounds.</p>
+
+					<p class="p">For more information, see the <a class="xref" href="../../docs/docs/api/symbols/sap.ui.layout.form.SimpleForm.html#setBackgroundDesign" alt="../../docs/docs/api/symbols/sap.ui.layout.form.SimpleForm.html#setBackgroundDesign" title="../../docs/docs/api/symbols/sap.ui.layout.form.SimpleForm.html#setBackgroundDesign">API Reference</a> in the Demo Kit.</p>
+
+				</li>
+
+				
+				
+				
+			</ul>
+
+		</div></div>
+
+		
+		
+		
+		<div class="section collapsible"><div class="section_title">Browser and Platform Support</div><div type="Browser and Platform Support">
+			
+			<p class="p">As of this version, <span class="ph"><span class="ph pname">OpenUI5</span></span> supports Microsoft Windows 10, Microsoft
+				Internet Explorer 11, Microsoft Edge, Edge on touch devices, Edge on Microsoft Windows Phones, and SAP Fiori Client 1.6.</p>
+
+		</div></div>
+
+
+	</div>
+
+<div class="related-links"> 
+
+<div class="familylinks">
+<div class="parentlink"><br/>
+<strong>Parent topic: </strong><a class="link" href="6660a59a8a22460a91fe65a0d96a567e.html">Previous Versions</a><br/>
+</div>
+</div>
+<div class="relinfo"><div class="relinfotitle ">Related Information</div>
+<div><a class="link" href="05ce1dc72c74475bada39234f6721f21.html" title="With this release, the UI development toolkit for HTML5 (OpenUI5) is upgraded from version 1.42 to 1.44.">What's New in OpenUI5 1.44</a></div>
+<div><a class="link" href="4768f1ac7f0645929b4e9ea9981bb65e.html" title="With this release the UI development toolkit for HTML5 (OpenUI5) is upgraded from version 1.40 to 1.42.">What's New in OpenUI5 1.42</a></div>
+<div><a class="link" href="e659bd2383524a05b716916bcda9b368.html" title="With this release the UI development toolkit for HTML5 (OpenUI5) is upgraded from version 1.38 to 1.40.">What's New in OpenUI5 1.40</a></div>
+<div><a class="link" href="6a875f998994489483e8085705347d72.html#loio6a875f998994489483e8085705347d72" title="With this release the UI development toolkit for HTML5 (OpenUI5) is upgraded from version 1.36 to 1.38.">What's New in OpenUI5 1.38</a></div>
+<div><a class="link" href="2eba716185154494ac0b44cddd2e4c8e.html#loio2eba716185154494ac0b44cddd2e4c8e" title="With this release the UI development toolkit for HTML5 (OpenUI5) is upgraded from version 1.32 to 1.34.">What's New in OpenUI5 1.34</a></div>
+<div><a class="link" href="c7c26285a53b461cbecb3da2c51a2f64.html#loioc7c26285a53b461cbecb3da2c51a2f64" title="With this release the UI development toolkit for HTML5 (OpenUI5) is upgraded from version 1.30 to 1.32.">What's New in OpenUI5 1.32</a></div>
+<div><a class="link" href="dec9d4c7d12d479d98483e2e46643e01.html#loiodec9d4c7d12d479d98483e2e46643e01" title="With this release the UI development toolkit for HTML5 (OpenUI5) is upgraded from version 1.28 to 1.30.">What's New in OpenUI5 1.30</a></div>
+<div><a class="link" href="4c605d154a894dc1a0a4662eb8c6cc63.html#loio4c605d154a894dc1a0a4662eb8c6cc63" title="With this release the UI development toolkit for HTML5 (OpenUI5) is upgraded from version 1.26 to 1.28.">What's New in OpenUI5 1.28</a></div>
+<div><a class="link" href="2bfac839aa21483f89403dc4ab090724.html#loio2bfac839aa21483f89403dc4ab090724" title="With this release the UI development toolkit for HTML5 (OpenUI5) is upgraded from version 1.24 to 1.26.">What's New in OpenUI5 1.26</a></div>
+</div>
+</div>
+</div>
+</div></div>
+
+</body>
+</html>

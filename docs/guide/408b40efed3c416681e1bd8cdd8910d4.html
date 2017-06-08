@@ -1,0 +1,180 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="abstract" content="If a Web app seems to have performance issues, finding out what's causing this can be both a time-consuming and nerve-consuming task. To help you avoid and maybe already solve performance issues in your app, here are some good practices we've discovered while dealing with OpenUI5 apps."/>
+<meta name="description" content="If a Web app seems to have performance issues, finding out what's causing this can be both a time-consuming and nerve-consuming task. To help you avoid and maybe already solve performance issues in your app, here are some good practices we've discovered while dealing with OpenUI5 apps."/>
+
+<link rel="stylesheet" type="text/css" href="css/documentation.css?x=10612510671417752"/>
+<title>Performance: Speed Up Your App</title>
+  <link rel="stylesheet" type="text/css" href="../../resources/sap/ui/demokit/themes/base/highlight-query-terms.css" />
+    <link rel="stylesheet" type="text/css" href="../../resources/sap/ui/demokit/js/google-code-prettify/prettify.css" />
+    <script src="../../resources/sap/ui/demokit/js/sdk-pagehelper.js"></script>
+  </head>
+<body class="" id="loio408b40efed3c416681e1bd8cdd8910d4">
+<div id="wrapper"><div id="container">
+
+	<h1 class="title topictitle1">Performance: Speed Up Your App</h1>
+
+	
+	<div class="body conbody"><p class="shortdesc">If a Web app seems to have performance issues, finding out what's causing this can be both a time-consuming and nerve-consuming task. To help you
+		avoid and maybe already solve performance issues in your app, here are some good practices we've discovered while dealing with <span class="ph"><span class="ph pname">OpenUI5</span></span> apps. </p>
+
+		<p class="p">When it comes to performance, it's often the case that an app is immediately considered to be slow. But this is only half of the truth. Sure, the app
+			is what can be seen, but what <span class="ph emphasis emphasis">is</span> actually the app? It is the sum of its coding, retrieved and executed in a specific
+			environment.</p>
+
+		<p class="p">For <span class="ph"><span class="ph pname">OpenUI5</span></span> apps, we basically talk about JavaScript files sent to a client by a server
+			and interpreted by the browser. So it's not only the coding of the app the can cause a slow performance. In many cases, it turns out that the
+			configuration is wrong, for example. Slow networks or servers may also have a heavy impact on the performance of a Web app. Let's have a look at the
+			most common issues.</p>
+
+		<div class="section"><div class="section_title">Configuration</div><div type="Configuration">
+			
+			<div class="p">Issues with configuration are often caused by an old bootstrap or wrong usage of the activated features. Here's an example of what a bootstrap
+				should look like for a modern <span class="ph"><span class="ph pname">OpenUI5</span></span> app:<div class="div_pre_codeblock"><pre class="pre codeblock prettyprint lang-html">&lt;script id="sap-ui-bootstrap"
+	src="<span class="ph">openui5</span>/resources/sap-ui-core.js"
+	data-sap-ui-libs="sap.m"
+	data-sap-ui-theme="sap_belize"
+	data-sap-ui-bindingSyntax="complex"
+	data-sap-ui-compatVersion="edge"
+	<span class="ph emphasis emphasis">data-sap-ui-preload="async"</span>
+	data-sap-ui-resourceroots='{
+		"your.app": "yourDir/"
+}'&gt;</pre></div>
+<div class="note note"><span class="notetitle">Note</span> 
+					<p class="p">For more information on bootstrap attributes, see <a class="xref" href="a04b0d10fb494d1cb722b9e341b584ba.html" title="To use OpenUI5 features in your HTML page, you have to load and initialize the SAPUI5 library.">Bootstrapping: Loading and Initializing</a>.</p>
+
+				</div>
+</div>
+
+			<p class="p">The most important setting here is <samp class="ph codeph">data-sap-ui-preload="async"</samp>. This enables the runtime to load the modules for all declared
+				libraries asynchronously in the background. This reduces the amount of requests sent by the client that could block each other.</p>
+
+			<p class="p">Don't forget to implement the asynchronous behavior in the <samp class="ph codeph">init</samp> event of the core as well, as shown in the following code
+				snippet:</p>
+
+			<div class="p">
+				<div class="div_pre_codeblock"><pre class="pre codeblock prettyprint lang-html">&lt;script&gt;
+sap.ui.getCore().attachInit(function() {
+	sap.ui.require([
+		"sap/ui/core/ComponentContainer"
+	], function(ComponentContainer) {
+		sap.ui.component({
+			<span class="ph emphasis emphasis">async: true</span>,
+			name: "your.component"
+		}).then(function(yourComponent) {
+			new ComponentContainer({
+				component: yourComponent
+			}).placeAt("content");
+		});
+	});
+});
+&lt;/script&gt;</pre></div>
+
+			</div>
+
+			<div class="p">The <samp class="ph codeph">async</samp> mode only pays out if all libraries that are required initially are specified in the <samp class="ph codeph">data-sap-ui-libs</samp>
+				attribute of the bootstrap. If there are additional dependencies that are not listed (like transitive dependencies that are inherited from a
+				listed library), <span class="ph"><span class="ph pname">OpenUI5</span></span> can load them automatically, but then <span class="ph"><span class="ph pname">OpenUI5</span></span> has to read the configured libraries first and find out about these
+				dependencies, which also takes time. That's why we recommend adding these libraries explicitly to the bootstrap parameter
+					<samp class="ph codeph">data-sap-ui-libs</samp> to achieve maximum parallelism.<div class="note note"><span class="notetitle">Note</span> 
+					<p class="p">This does not apply for apps that have a descriptor file. In this case, only direct dependencies should be listed. For more information,
+						see <a class="xref" href="be0cf40f61184b358b5faedaec98b2da.html" title="The descriptor for applications, components, and libraries is inspired by the Web Application Manifest concept introduced by the W3C. The descriptor provides a central, machine-readable and easy-to-access location for storing metadata associated with an application, an application component, or a library.">Descriptor for Applications, Components, and Libraries</a>.</p>
+
+					
+				</div>
+
+			</div>
+
+		</div></div>
+
+		<div class="section"><div class="section_title">Network</div><div type="Network">
+			
+			<div class="p">If you want to quickly check the network load caused by your app, look at the developer tools of your browser, for example the
+					<span class="ph uicontrol">Network</span> tab in the Google Chrome developer tools (<kbd class="key">F12</kbd>). You'll see an overview of all requests being sent.
+				Possible issues here may be:<ul class="ul" id="loio408b40efed3c416681e1bd8cdd8910d4__ul_vlp_zmq_zt">
+					<li class="li">
+						<p class="p">Synchronous requests that block each other</p>
+
+						<p class="p">In this case use the <samp class="ph codeph">data-sap-ui-preload="async"</samp> setting in the bootstrap.</p>
+
+					</li>
+
+					<li class="li">
+						<p class="p">Amount of requests is too big</p>
+
+						<p class="p">For <span class="ph pname">OpenUI5</span> apps that use grunt as a
+							Web server, you can use the <samp class="ph codeph">openui5_preload</samp> task to bundle and minimize all relevant files of a component. For more
+							information, see <a class="extlink" href="http://scn.sap.com/community/developer-center/front-end/blog/2015/02/18/optimizing-openui5-apps" alt="http://scn.sap.com/community/developer-center/front-end/blog/2015/02/18/optimizing-openui5-apps" title="http://scn.sap.com/community/developer-center/front-end/blog/2015/02/18/optimizing-openui5-apps">Optimizing OpenUI5/SAPUI5 Apps</a> in the SAPUI5 Developer Center on SAP SCN. This task creates a
+							Component-preload file.</p>
+
+						<p class="p">If you're using SAP Web IDE, refer to <a class="xref" href="https://help.hana.ondemand.com/webide/frameset.htm?dfb26ef028624cf486a8bbb0bfd459ff.html" alt="https://help.hana.ondemand.com/webide/frameset.htm?dfb26ef028624cf486a8bbb0bfd459ff.html" title="https://help.hana.ondemand.com/webide/frameset.htm?dfb26ef028624cf486a8bbb0bfd459ff.html">Application Build</a> in the SAP Web IDE documentation.</p>
+
+					</li>
+
+				</ul>
+
+			</div>
+
+			
+		</div></div>
+
+		<div class="section"><div class="section_title">Code</div><div type="Code">
+			
+			<div class="p">You can also optimize your coding by doing the following:<ul class="ul" id="loio408b40efed3c416681e1bd8cdd8910d4__ul_vvm_z4q_zt">
+					<li class="li">
+						<p class="p">Use non-blocking view loading as described here: <a class="xref" href="68d0e58857a647d49470d9f92dd859bd.html" title="To instantiate views, OpenUI5 provides the factory method sap.ui.view.">Instantiating Views</a></p>
+
+					</li>
+
+					<li class="li">
+						<p class="p">If you make use of data binding with an OData service as a back end, you may also consider switching your OData model to our more
+							modern V2 OData model. For more information, see <a class="xref" href="6c47b2b39db9404582994070ec3d57a2.html#loio6c47b2b39db9404582994070ec3d57a2" title="The OData V2 Model enables binding of controls to data from OData services.">OData V2 Model</a></p>
+
+					</li>
+
+					<li class="li">
+						<p class="p">Make use of asynchronous module loading (AMD style) for custom controls or other scripts. Although it is only supported by the
+							preload, it will help us in future to enable asynchronous loading of individual modules combined with the usage of HTTP/2 or
+							AMD-based packagers. It also ensures proper dependency tracking between modules.</p>
+
+						<p class="p">Writing AMD modules is only half the story. You only need to avoid access to <span class="ph"><span class="ph pname">OpenUI5</span></span> classes via global names. Do not use <samp class="ph codeph">new
+								sap.m.Button()</samp>, but require the <samp class="ph codeph">Button</samp> and call the constructor via the local AMD reference. For more
+							information, see the <span class="ph"><a class="xref" href="../../docs/api/symbols/sap.ui.html#.define" alt="../../docs/api/symbols/sap.ui.html#.define" title="../../docs/api/symbols/sap.ui.html#.define"> API Reference for <samp class="ph codeph">sap.ui.define</samp></a>
+								in the Demo Kit.</span></p>
+
+					</li>
+
+					<li class="li">
+						<p class="p">Avoid the usage of <samp class="ph codeph">setTimeout()</samp> calls with values greater than <samp class="ph codeph">0</samp>. This usually indicates an
+							anti-pattern in application code that is used as workaround and should be avoided. (See also <a class="xref" href="030fcd14963048218488048f407f8f34.html#loio030fcd14963048218488048f407f8f34__11">JavaScript Code Issues: Don't use timeouts</a>.)</p>
+
+					</li>
+
+					<li class="li">
+						<p class="p">Don't use visibility for lazy instantiation. (See <a class="xref" href="966d67c8cc5046419d1b35556cd9e447.html#loio966d67c8cc5046419d1b35556cd9e447__1">Performance Issues: Don't use
+								visibility for lazy instantiation</a>.)</p>
+
+					</li>
+
+				</ul>
+</div>
+
+		</div></div>
+
+	</div>
+
+	<div class="related-links"> 
+<div class="relinfo"><div class="relinfotitle ">Related Information</div>
+<div><a class="link" href="966d67c8cc5046419d1b35556cd9e447.html" title="This section lists some of the most important issues that should be avoided to improve performance in OpenUI5 applications.">Coding Issues to Avoid: Performance Issues</a></div>
+<div><a class="link" href="78880c09a1954a02b49c21357d45c91f.html" title="You can use jQuery.sap.measure to measure the performance of your JavaScript code.">Performance Measurement Using jQuery.sap.measure</a></div>
+<div><a class="link" href="https://blogs.sap.com/2016/10/29/sapui5-application-startup-performance-best-practices/" alt="https://blogs.sap.com/2016/10/29/sapui5-application-startup-performance-best-practices/" title="https://blogs.sap.com/2016/10/29/sapui5-application-startup-performance-best-practices/">Blog: SAPUI5 Application Startup Performance – Best Practices</a></div>
+<div><a class="link" href="https://blogs.sap.com/2016/11/19/sapui5-application-startup-performance-advanced-topics/" alt="https://blogs.sap.com/2016/11/19/sapui5-application-startup-performance-advanced-topics/" title="https://blogs.sap.com/2016/11/19/sapui5-application-startup-performance-advanced-topics/">Blog: SAPUI5 Application Startup Performance – Advanced Topics</a></div>
+</div>
+</div>
+</div></div>
+
+</body>
+</html>

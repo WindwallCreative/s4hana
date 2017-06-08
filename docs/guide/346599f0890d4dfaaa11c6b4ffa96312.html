@@ -1,0 +1,117 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="abstract" content="You can use a ComponentContainer to wrap a UIComponent and reuse it at any place within the OpenUI5 control tree."/>
+<meta name="description" content="You can use a ComponentContainer to wrap a UIComponent and reuse it at any place within the OpenUI5 control tree."/>
+
+<link rel="stylesheet" type="text/css" href="css/documentation.css?x=766250934989875"/>
+<title>Using and Nesting Components</title>
+  <link rel="stylesheet" type="text/css" href="../../resources/sap/ui/demokit/themes/base/highlight-query-terms.css" />
+    <link rel="stylesheet" type="text/css" href="../../resources/sap/ui/demokit/js/google-code-prettify/prettify.css" />
+    <script src="../../resources/sap/ui/demokit/js/sdk-pagehelper.js"></script>
+  </head>
+<body class="" id="loio346599f0890d4dfaaa11c6b4ffa96312">
+<div id="wrapper"><div id="container">
+
+	<h1 class="title topictitle1">Using and Nesting Components</h1>
+
+	
+	<div class="body"><p class="shortdesc">You can use a <samp class="ph codeph">ComponentContainer</samp> to wrap a <samp class="ph codeph">UIComponent</samp> and reuse it at any place within the <span class="ph"><span class="ph pname">OpenUI5</span></span> control tree.</p>
+
+		<p class="p">To render UI components, you must wrap them in a <samp class="ph codeph">ComponentContainer</samp>. It is <span class="ph emphasis emphasis">not</span> possible to use the
+				<samp class="ph codeph">placeAt</samp> method to place UI components directly in a page. A component container carries specific settings and also contains the
+			lifecycle methods of a regular control, such as the <samp class="ph codeph">onBeforeRendering</samp> and <samp class="ph codeph">onAfterRendering</samp> methods. The lifecycle
+			methods of the <samp class="ph codeph">ComponentContainer</samp> are forwarded to the corresponding methods of the nested component.</p>
+
+		<p class="p">The <samp class="ph codeph">ComponentContainer</samp> separates the application and the nested component. The control tree and data binding of the inner are
+			decoupled from the outside. </p>
+
+		<p class="p">If you want to share data with the inner component, you can use property <samp class="ph codeph">propagateModel</samp> on the <samp class="ph codeph">ComponentContainer</samp>
+			to forward models and binding contexts to the inner component.</p>
+
+		<div class="section"><div class="section_title">Loading and Instantiating Components</div><div type="Loading and Instantiating Components">
+			
+			<div class="p">You have the following options to load and create a <samp class="ph codeph">UIComponent</samp>:<ul class="ul" id="loio346599f0890d4dfaaa11c6b4ffa96312__ul_pht_yq1_qk">
+					<li class="li">
+						<div class="p">Loading the component before creating the
+							container:<div class="div_pre_codeblock"><pre class="pre codeblock prettyprint lang-js">	var oComponent = sap.ui.component({
+		name: "samples.components.sample"
+	});
+
+	var oContainer = new sap.ui.core.ComponentContainer({
+		component : oComponent
+	});
+	oContainer.placeAt("target");
+</pre></div>
+</div>
+
+					</li>
+
+					<li class="li">
+						<div class="p">Loading the component while creating the
+							container:<div class="div_pre_codeblock"><pre class="pre codeblock prettyprint lang-js">	var oContainer = new sap.ui.core.ComponentContainer({
+		name: "samples.components.sample"
+		lifecycle: sap.ui.core.ComponentLifecycle.Container
+	});
+	oContainer.placeAt("target");
+</pre></div>
+</div>
+
+					</li>
+
+					<li class="li">
+						<div class="p">Loading the component asynchronously with "manifest first" mode by specifying the URL of the descriptor
+								(<span class="ph filepath">manifest.json</span>):
+							<div class="div_pre_codeblock"><pre class="pre codeblock prettyprint lang-js">	var oComponent = sap.ui.component({
+		manifestUrl: "samples/components/sample/manifest.json",
+		async: true
+	});
+
+	var oContainer = new sap.ui.core.ComponentContainer({
+		component : oComponent
+	});
+	oContainer.placeAt("target");
+</pre></div>
+</div>
+
+					</li>
+
+					<li class="li">
+						<div class="p">Loading the component asynchronously with "manifest first" mode by specifying the component name:
+							<div class="div_pre_codeblock"><pre class="pre codeblock prettyprint lang-js">	var oComponent = sap.ui.component({
+		name: "samples.components.sample",
+		manifestFirst: true,
+		async: true
+ 	});
+
+	var oContainer = new sap.ui.core.ComponentContainer({
+		component : oComponent
+	});
+	oContainer.placeAt("target");</pre></div>
+</div>
+
+					</li>
+
+				</ul>
+</div>
+
+			<p class="p">You can use the <samp class="ph codeph">lifecycle</samp> property to determine whether the container or your application code will take care of destroying the
+				component.</p>
+
+		</div></div>
+
+	</div>
+
+	<div class="related-links"> 
+<div class="relinfo"><div class="relinfotitle ">Related Information</div>
+<div><a class="link" href="2c66fb3eb775426087401117cfa6a94e.html" title="If you use nested component definitions in your app, you can connect the routing definition of these components by using a parent-relationship for routes.">Working with Nested Components</a></div>
+<div><a class="link" href="../../docs/api/symbols/sap.ui.core.ComponentContainer.html" alt="../../docs/api/symbols/sap.ui.core.ComponentContainer.html" title="../../docs/api/symbols/sap.ui.core.ComponentContainer.html">API Reference: <samp class="ph codeph">sap.ui.core.ComponentContainer</samp></a></div>
+<div><a class="link" href="../../docs/api/symbols/sap.ui.core.ComponentContainer.html#setLifecycle" alt="../../docs/api/symbols/sap.ui.core.ComponentContainer.html#setLifecycle" title="../../docs/api/symbols/sap.ui.core.ComponentContainer.html#setLifecycle">API Reference: <samp class="ph codeph">sap.ui.core.ComponentContainer.setLifecycle</samp></a></div>
+</div>
+</div>
+</div></div>
+
+</body>
+</html>
